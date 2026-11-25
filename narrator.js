@@ -24,7 +24,6 @@ const speeches = {
 const missionFacts={
  a0:{text:'В первой русской матрёшке было восемь фигурок. Самая большая держала чёрного петуха, а самая маленькая была младенцем.',source:'https://nkmuseum.ru/virtual-exhibitions/kuzneczkaya-matreshka/'},
  a1:{text:'Узор на татарских сапожках — ичигáх — собирали из кусочков цветной кожи. Мастера сшивали их так, что получалась мозаика.',source:'https://tatarica.org/ru/razdely/narody/tatary/narodnoe-iskusstvo/mozaika-kozhanaya'},
- a2:{text:'В Жостове мастера расписывают металлические подносы. На тёмном фоне они рисуют садовые и полевые цветы, а по краю — тонкий золотистый узор.',source:'https://www.culture.ru/materials/132229/starinnye-remesla-5-mest-na-karte-rossii'},
  a3:{text:'Дымковские свистульки лепят из глины. Когда-то мастерицы обжигали их в русской печи, ставя на железный противень над дровами.',source:'https://museum-nt.ru/content/science/publications/detail.php?ELEMENT_ID=8644'},
  a4:{text:'Городецкие мастера когда-то расписывали деревянные дощечки от прялок. Позже такой росписью стали украшать и другие вещи для дома.',source:'https://www.culture.ru/objects/429/gorodeckaya-rospis-po-derevu'},
  a5:{text:'День оленевода на Чукотке связан с весенней работой. В начале марта оленеводы собирают стадо и пересчитывают оленей.',source:'https://chukotka.travel/events/den-olenevoda/'}
