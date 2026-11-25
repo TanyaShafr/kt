@@ -50,10 +50,10 @@ function instructionVideo(){
  return '<section class="opening-screen opening-film"><video class="opening-video" aria-label="Видео бабушки-сказочницы" controls playsinline preload="metadata" poster="art/journal-narrator.webp" src="'+pendingVideo.src+'"></video>'+
   '<div class="opening-actions">'+btn('Назад','video-back')+btn(pendingVideo.label,'video-next','primary')+'</div></section>';
 }
-function showInstructionVideo(id,action,label='Открыть задание',retryRoom=null){
+function showInstructionVideo(id,action,label='Открыть задание'){
  const src=stageClip(id);
  if(!src)return false;
- pendingVideo={src,action,label,retryRoom};render();
+ pendingVideo={src,action,label};render();
  app.querySelector('.opening-video').play().catch(()=>{});
  return true;
 }
@@ -179,10 +179,6 @@ async function act(a){
  const afterVideo=a==='video-next';
  if(afterVideo){
   if(!pendingVideo)return;
-  if(pendingVideo.retryRoom){
-   const room=pendingVideo.retryRoom;
-   enterTeacherRoom(room);return;
-  }
   a=pendingVideo.action;
  }
  if(a==='discussion-voice'){
@@ -267,7 +263,6 @@ async function act(a){
  if(!rehearsal&&!practiceTeams&&!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});
  const d=await call('create','',0,{familyWaiting:!rehearsal});const roomState=await call('state',d.code);
  if(!Number.isInteger(roomState.mission))throw Error('Для запуска установите SQL для подключения или откройте репетицию');
- if(!rehearsal&&roomState.familyOpen===undefined&&showInstructionVideo('family','','Показать код',roomState))return;
  const quickRehearsal=a==='rehearsal-start';
  enterTeacherRoom(roomState,quickRehearsal);
  if(quickRehearsal)showInstructionVideo('family','slide-family','Открыть семейный вопрос');
